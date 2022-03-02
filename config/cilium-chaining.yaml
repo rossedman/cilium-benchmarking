@@ -1,0 +1,11 @@
+cluster:
+  name: eksctl-sandbox-1
+  id: 1
+cni:
+  chainingMode: "aws-cni"
+nodeinit:
+  enabled: true
+hubble:
+  enabled: false
+tunnel: disabled
+enableIPv4Masquerade: false

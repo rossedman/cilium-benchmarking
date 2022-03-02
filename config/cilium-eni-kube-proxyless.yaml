@@ -1,0 +1,19 @@
+cluster:
+  name: eksctl-sandbox-1
+  id: 1
+eni:
+  enabled: true
+  iamRole: "arn:aws:iam::REMOVED:role/cilium-operator-role"
+ipam:
+  mode: eni
+nodeinit:
+  enabled: true
+hubble:
+  enabled: false
+tunnel: disabled
+egressMasqueradeInterfaces: eth0
+operator:
+  rollOutPods: true
+rollOutCiliumPods: true
+k8sServicePort: "443"
+kubeProxyReplacement: strict

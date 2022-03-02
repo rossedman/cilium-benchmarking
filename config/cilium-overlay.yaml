@@ -1,0 +1,13 @@
+cluster:
+  name: eksctl-sandbox-1
+  id: 1
+eni:
+  enabled: false
+nodeinit:
+  enabled: true
+hubble:
+  enabled: false
+egressMasqueradeInterfaces: eth0
+operator:
+  rollOutPods: true
+rollOutCiliumPods: true

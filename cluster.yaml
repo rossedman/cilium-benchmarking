@@ -1,0 +1,24 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: eksctl-sandbox-1
+  region: us-east-1
+iam:
+  withOIDC: true
+  serviceAccounts:
+  - metadata:
+      name: cilium-operator
+      namespace: kube-system
+    attachPolicyARNs:
+    - "arn:aws:iam::679441504692:policy/CiliumOperatorAccess"
+    roleName: cilium-operator-role
+    roleOnly: true
+managedNodeGroups:
+- name: ng-1-default
+  labels: { role: default }
+  instanceType: "m5n.24xlarge"
+  availabilityZones: ["us-east-1a"]
+  minSize: 1
+  maxSize: 2
+  desiredCapacity: 2
+  privateNetworking: true
